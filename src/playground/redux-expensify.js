@@ -88,6 +88,8 @@ const expensesReducer = (state = expensesReducerDefaultState, action) => {
   }
 };
 
+// Filters Reducer
+
 const filtersReducerDefaultState = {
   text: "",
   sortBy: "date",
@@ -148,7 +150,7 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
     })
     .sort((a, b) => {
       if (sortBy === "date") {
-        return a.createdAt < b.createAt ? 1 : -1;
+        return a.createdAt < b.createdAt ? 1 : -1;
       } else if (sortBy === "amount") {
         return a.amount < b.amount ? 1 : -1;
       }
@@ -194,22 +196,17 @@ store.dispatch(sortByAmount());
 const demoState = {
   expenses: [
     {
-      id: "pasdjfsiadf",
-      description: "January Rent",
-      note: "This was the final payment for that address",
+      id: "asdfsadfe",
+      description: "December Rent",
+      "note": "This was the final payment for that address",
       amount: 54500,
       createdAt: 0,
     },
   ],
   filters: {
     text: "rent",
-    sortBy: "amount", // date or amount
+    sortBy: "amount",
     startDate: undefined,
     endDate: undefined,
   },
-};
-
-const user = {
-  name: "Jen",
-  age: 24,
 };

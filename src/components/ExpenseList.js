@@ -1,11 +1,12 @@
 import React from "react";
+import ExpenseListItem from "./ExpenseListItem";
 import { connect } from "react-redux";
 
 const ExpenseList = (props) => (
   <div>
     <h1>Expense List</h1>
-    {props.filters.text}
-    {props.expenses.length}
+    <ExpenseListItem />
+    // {props.expenses.length}
   </div>
 );
 
