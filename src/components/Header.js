@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => (
-  <header>
+  <header role='header'>
     <h1>Expensify</h1>
     <NavLink
       to='/'
@@ -17,6 +17,7 @@ const Header = () => (
     >
       Create Expense
     </NavLink>
+
     <NavLink
       to='/help'
       className={({ isActive }) => (isActive ? "is-active" : undefined)}
